@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EM-X - The New Frontier of Crypto | Built on BNB Chain</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+background-color: #0B0E17;
+color: #fff;
+}
+.gradient-text {
+background: linear-gradient(90deg, #57B5E7, #8DD3C7);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(11,14,23,0.9) 0%, rgba(11,14,23,0.7) 50%, rgba(11,14,23,0.4) 100%);
+}
+.glow-button {
+box-shadow: 0 0 20px rgba(87,181,231,0.3);
+transition: all 0.3s ease;
+}
+.glow-button:hover {
+box-shadow: 0 0 30px rgba(87,181,231,0.5);
+}
+</style>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#57B5E7',
+secondary: '#8DD3C7'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+</head>
+<body>
+<nav class="fixed w-full bg-opacity-90 bg-[#0B0E17] backdrop-blur-sm z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-16">
+<div class="flex items-center">
+<span class="text-2xl font-bold gradient-text">EM-X</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#home" class="text-gray-300 hover:text-white">Home</a>
+<a href="#tokenomics" class="text-gray-300 hover:text-white">Tokenomics</a>
+<a href="#roadmap" class="text-gray-300 hover:text-white">Roadmap</a>
+<a href="#how-to-buy" class="text-gray-300 hover:text-white">How to Buy</a>
+<a href="#whitepaper" class="text-gray-300 hover:text-white">Whitepaper</a>
+<a href="#community" class="text-gray-300 hover:text-white">Community</a>
+</div>
+</div>
+</div>
+</nav>
+<section id="home" class="relative min-h-screen flex items-center">
+<div class="absolute inset-0 z-0" style="background-image: url('https://readdy.ai/api/search-image?query=A%20stunning%2C%20photorealistic%20Mars%20landscape%20with%20Earth%20visible%20in%20the%20dark%20sky%2C%20featuring%20red%20rocky%20terrain%2C%20subtle%20dust%20storms%2C%20and%20advanced%20technological%20structures%20in%20the%20distance.%20The%20left%20side%20smoothly%20transitions%20to%20a%20darker%2C%20cleaner%20background%20that%20will%20work%20well%20with%20text%20overlay.%20Highly%20detailed%2C%20cinematic%20lighting%2C%208k%20quality.&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="hero-overlay absolute inset-0 z-10"></div>
+<div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+<div class="max-w-2xl">
+<h1 class="text-5xl md:text-6xl font-bold mb-6">The New Frontier of Crypto</h1>
+<p class="text-xl md:text-2xl text-gray-300 mb-8">Built on BNB Chain, powering the future of decentralized finance.</p>
+<div class="flex flex-wrap gap-4">
+<button class="glow-button bg-primary text-white px-8 py-3 !rounded-button font-medium">Join Community</button>
+<button class="border border-white/30 bg-white/10 backdrop-blur-sm text-white px-8 py-3 !rounded-button font-medium hover:bg-white/20 transition-colors">Explore Whitepaper</button>
+</div>
+</div>
+</div>
+</section>
+<section id="tokenomics" class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-4xl font-bold mb-16 text-center gradient-text">Tokenomics</h2>
+<div class="flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="w-full md:w-1/2">
+<div id="tokenomicsChart" class="w-full h-[400px]"></div>
+</div>
+<div class="w-full md:w-1/2 space-y-6">
+<div class="p-6 bg-white/5 rounded-lg backdrop-blur-sm">
+<h3 class="text-xl font-semibold mb-2">Community Pool - 95%</h3>
+<p class="text-gray-300">Reserved for community governance and ecosystem growth.</p>
+</div>
+<div class="p-6 bg-white/5 rounded-lg backdrop-blur-sm">
+<h3 class="text-xl font-semibold mb-2">Founder Team - 5%</h3>
+<p class="text-gray-300">Locked for 24 months, dedicated to long-term project development.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="roadmap" class="py-20 bg-white/5">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-4xl font-bold mb-16 text-center gradient-text">Roadmap</h2>
+<div class="grid md:grid-cols-4 gap-8">
+<div class="p-6 bg-white/5 rounded-lg backdrop-blur-sm border border-primary/20">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-4">
+<i class="ri-rocket-2-line text-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">Phase 1: Launch</h3>
+<p class="text-gray-300">Token launch and initial community building</p>
+<span class="inline-block mt-4 px-3 py-1 bg-primary/20 text-primary text-sm rounded-full">Completed</span>
+</div>
+<div class="p-6 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10">
+<div class="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full mb-4">
+<i class="ri-exchange-line text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">Phase 2: Development</h3>
+<p class="text-gray-300">DEX integration and liquidity pools</p>
+<span class="inline-block mt-4 px-3 py-1 bg-white/10 text-white/70 text-sm rounded-full">In Progress</span>
+</div>
+<div class="p-6 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10">
+<div class="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full mb-4">
+<i class="ri-shield-line text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">Phase 3: Security</h3>
+<p class="text-gray-300">Security audit and protocol improvements</p>
+<span class="inline-block mt-4 px-3 py-1 bg-white/10 text-white/70 text-sm rounded-full">Q3 2025</span>
+</div>
+<div class="p-6 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10">
+<div class="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full mb-4">
+<i class="ri-global-line text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">Phase 4: Expansion</h3>
+<p class="text-gray-300">Cross-chain integration and ecosystem growth</p>
+<span class="inline-block mt-4 px-3 py-1 bg-white/10 text-white/70 text-sm rounded-full">Q4 2025</span>
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-buy" class="py-20 bg-white/5">
+<div id="buyModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center">
+<div class="bg-[#0B0E17] border border-white/10 rounded-xl w-full max-w-md p-6 relative">
+<button id="closeModal" class="absolute right-4 top-4 text-gray-400 hover:text-white">
+<i class="ri-close-line text-xl"></i>
+</button>
+<div id="walletConnect" class="space-y-6">
+<h3 class="text-2xl font-semibold mb-6">Connect Wallet</h3>
+<button class="w-full p-4 bg-white/5 border border-white/10 rounded-lg hover:border-primary/50 transition-all flex items-center gap-4 group">
+<i class="ri-metamask-fill text-2xl text-[#F6851B]"></i>
+<span>MetaMask</span>
+<i class="ri-arrow-right-line ml-auto group-hover:text-primary"></i>
+</button>
+<button class="w-full p-4 bg-white/5 border border-white/10 rounded-lg hover:border-primary/50 transition-all flex items-center gap-4 group">
+<i class="ri-wallet-3-fill text-2xl text-[#3375BB]"></i>
+<span>Trust Wallet</span>
+<i class="ri-arrow-right-line ml-auto group-hover:text-primary"></i>
+</button>
+</div>
+<div id="swapInterface" class="hidden space-y-6">
+<h3 class="text-2xl font-semibold mb-6">Buy EM-X</h3>
+<div class="p-4 bg-white/5 border border-white/10 rounded-lg space-y-2">
+<div class="flex justify-between text-sm text-gray-400">
+<span>From</span>
+<span>Balance: 0.00 BNB</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2">
+<i class="ri-binance-fill text-[#F0B90B] text-xl"></i>
+<span>BNB</span>
+</div>
+<input type="number" class="w-full bg-transparent text-right outline-none" placeholder="0.0">
+</div>
+</div>
+<div class="flex justify-center">
+<button class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+<i class="ri-arrow-down-line"></i>
+</button>
+</div>
+<div class="p-4 bg-white/5 border border-white/10 rounded-lg space-y-2">
+<div class="flex justify-between text-sm text-gray-400">
+<span>To</span>
+<span>Balance: 0.00 EM-X</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2">
+<span class="gradient-text font-semibold">EM-X</span>
+</div>
+<input type="number" class="w-full bg-transparent text-right outline-none" placeholder="0.0">
+</div>
+</div>
+<div class="space-y-3 text-sm">
+<div class="flex justify-between">
+<span class="text-gray-400">Exchange Rate</span>
+<span>1 BNB = 10,000 EM-X</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-400">Network Fee</span>
+<span>~0.0005 BNB</span>
+</div>
+</div>
+<button class="w-full glow-button bg-primary text-white py-3 !rounded-button font-medium disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+Insufficient BNB Balance
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-4xl font-bold mb-16 text-center gradient-text">How to Buy</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="p-6 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10 hover:border-primary/50 transition-all duration-300">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-4">
+<i class="ri-wallet-3-line text-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold mb-4">1. Create Wallet</h3>
+<p class="text-gray-300">Download MetaMask or Trust Wallet and create your wallet. Add BNB Smart Chain network.</p>
+</div>
+<div class="p-6 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10 hover:border-primary/50 transition-all duration-300">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-4">
+<i class="ri-coins-line text-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold mb-4">2. Get BNB</h3>
+<p class="text-gray-300">Purchase BNB through your preferred exchange and transfer it to your wallet.</p>
+</div>
+<div class="p-6 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10 hover:border-primary/50 transition-all duration-300">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-4">
+<i class="ri-exchange-fill text-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold mb-4">3. Swap for EM-X</h3>
+<p class="text-gray-300">Visit PancakeSwap, connect your wallet, and swap BNB for EM-X tokens.</p>
+</div>
+</div>
+<div class="text-center mt-12">
+<button class="glow-button bg-primary text-white px-8 py-3 !rounded-button font-medium inline-flex items-center gap-2">
+<i class="ri-arrow-right-line"></i>
+Buy EM-X Now
+</button>
+</div>
+</div>
+</section>
+<section id="whitepaper" class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h2 class="text-4xl font-bold mb-8 gradient-text">Whitepaper</h2>
+<p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">Download our comprehensive documentation detailing the technical specifications, tokenomics model, and project roadmap.</p>
+<button class="glow-button bg-primary text-white px-8 py-3 !rounded-button font-medium inline-flex items-center gap-2">
+<i class="ri-file-paper-2-line"></i>
+Download Whitepaper
+</button>
+</div>
+</section>
+<section id="community" class="py-20 bg-white/5">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h2 class="text-4xl font-bold mb-8 gradient-text">Join Our Community</h2>
+<p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">Follow our social media channels for the latest updates and announcements.</p>
+<div class="flex justify-center gap-8">
+<a href="#" class="group">
+<div class="w-16 h-16 flex items-center justify-center bg-white/10 rounded-lg backdrop-blur-sm border border-white/20 group-hover:border-primary/50 transition-all duration-300">
+<i class="ri-telegram-fill text-2xl group-hover:text-primary transition-colors"></i>
+</div>
+<span class="block mt-2 text-sm text-gray-300">Telegram</span>
+</a>
+<a href="#" class="group">
+<div class="w-16 h-16 flex items-center justify-center bg-white/10 rounded-lg backdrop-blur-sm border border-white/20 group-hover:border-primary/50 transition-all duration-300">
+<i class="ri-twitter-x-fill text-2xl group-hover:text-primary transition-colors"></i>
+</div>
+<span class="block mt-2 text-sm text-gray-300">Twitter</span>
+</a>
+</div>
+</div>
+</section>
+<section id="contact" class="py-20 relative overflow-hidden">
+<div class="absolute inset-0 z-0" style="background-image: url('https://readdy.ai/api/search-image?query=A%20minimalist%2C%20futuristic%20Mars%20landscape%20at%20night%20with%20subtle%20red%20dust%20clouds%20and%20distant%20city%20lights.%20The%20scene%20is%20dark%20and%20moody%2C%20perfect%20for%20form%20overlay.%20The%20image%20smoothly%20fades%20to%20very%20dark%20on%20the%20edges.%20Professional%2C%20cinematic%2C%20high-end%20production%20quality.&width=1920&height=1080&seq=2&orientation=landscape'); background-size: cover; background-position: center; opacity: 0.2;"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-4xl font-bold mb-16 text-center gradient-text">Get in Touch with EM-X</h2>
+<form id="contactForm" class="max-w-xl mx-auto space-y-6">
+<div class="group">
+<input type="text" name="fullName" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 outline-none focus:border-primary/50 transition-all backdrop-blur-sm" placeholder="Full Name">
+</div>
+<div class="group">
+<input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 outline-none focus:border-primary/50 transition-all backdrop-blur-sm" placeholder="Email Address">
+</div>
+<div class="group">
+<textarea name="message" required rows="5" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-400 outline-none focus:border-primary/50 transition-all backdrop-blur-sm resize-none" placeholder="Your Message"></textarea>
+</div>
+<button type="submit" class="w-full glow-button bg-primary text-white py-4 !rounded-button font-medium flex items-center justify-center gap-2 group">
+<span>Send Message</span>
+<i class="ri-send-plane-line transform group-hover:translate-x-1 transition-transform"></i>
+</button>
+</form>
+</div>
+</section>
+<section id="trust-team" class="py-20 relative overflow-hidden">
+<div class="absolute inset-0 z-0" style="background-image: url('https://readdy.ai/api/search-image?query=A%20minimalist%2C%20abstract%20space%20background%20with%20subtle%20purple%20and%20blue%20nebulas%2C%20floating%20geometric%20shapes%2C%20and%20a%20faint%20grid%20pattern.%20The%20scene%20creates%20a%20sense%20of%20depth%20and%20technology%20while%20maintaining%20a%20clean%2C%20professional%20look.%20Dark%20theme%2C%20perfect%20for%20text%20overlay.%20High-end%2C%20professional%20quality.&width=1920&height=1080&seq=3&orientation=landscape'); background-size: cover; background-position: center; opacity: 0.15;"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-4xl font-bold mb-6 text-center gradient-text">Trust & Team</h2>
+<p class="text-xl text-gray-300 text-center mb-16 max-w-2xl mx-auto">Committed to transparency and long-term value creation, EM-X is built on trust and secured by innovative tokenomics.</p>
+<div class="bg-white/5 border border-white/10 rounded-xl p-8 backdrop-blur-sm mb-16">
+<h3 class="text-2xl font-semibold mb-6 text-center">Token Lock Timeline</h3>
+<div class="relative">
+<div class="absolute top-0 left-1/2 w-px h-full bg-white/10"></div>
+<div class="space-y-8">
+<div class="relative flex items-center">
+<div class="flex-1 pr-8 text-right">
+<h4 class="font-semibold">Public Pool (95%)</h4>
+<p class="text-sm text-gray-400">Available for community and ecosystem</p>
+</div>
+<div class="w-4 h-4 rounded-full bg-primary absolute left-1/2 -translate-x-1/2 z-10"></div>
+<div class="flex-1 pl-8">
+<span class="inline-block px-3 py-1 bg-primary/20 text-primary text-sm rounded-full">Active</span>
+</div>
+</div>
+<div class="relative flex items-center">
+<div class="flex-1 pr-8 text-right">
+<h4 class="font-semibold">Founder Pool (5%)</h4>
+<p class="text-sm text-gray-400">Locked for project development</p>
+</div>
+<div class="w-4 h-4 rounded-full bg-white/20 absolute left-1/2 -translate-x-1/2 z-10"></div>
+<div class="flex-1 pl-8">
+<span class="inline-block px-3 py-1 bg-white/10 text-gray-300 text-sm rounded-full">Locked until June 2027</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="group bg-white/5 border border-white/10 rounded-xl p-8 backdrop-blur-sm hover:border-primary/50 transition-all duration-500">
+<div class="w-20 h-20 mx-auto mb-6 relative">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:blur-2xl transition-all"></div>
+<div class="relative w-full h-full flex items-center justify-center bg-white/5 rounded-full border border-white/10">
+<i class="ri-code-box-line text-3xl text-primary"></i>
+</div>
+</div>
+<h3 class="text-xl font-semibold text-center mb-2">Lead Developer</h3>
+<p class="text-gray-400 text-center text-sm">10+ years in blockchain development. Previously contributed to major DeFi protocols.</p>
+</div>
+<div class="group bg-white/5 border border-white/10 rounded-xl p-8 backdrop-blur-sm hover:border-primary/50 transition-all duration-500">
+<div class="w-20 h-20 mx-auto mb-6 relative">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:blur-2xl transition-all"></div>
+<div class="relative w-full h-full flex items-center justify-center bg-white/5 rounded-full border border-white/10">
+<i class="ri-landscape-line text-3xl text-primary"></i>
+</div>
+</div>
+<h3 class="text-xl font-semibold text-center mb-2">Vision Director</h3>
+<p class="text-gray-400 text-center text-sm">Crypto veteran since 2013. Expertise in tokenomics and ecosystem development.</p>
+</div>
+<div class="group bg-white/5 border border-white/10 rounded-xl p-8 backdrop-blur-sm hover:border-primary/50 transition-all duration-500">
+<div class="w-20 h-20 mx-auto mb-6 relative">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:blur-2xl transition-all"></div>
+<div class="relative w-full h-full flex items-center justify-center bg-white/5 rounded-full border border-white/10">
+<i class="ri-shield-keyhole-line text-3xl text-primary"></i>
+</div>
+</div>
+<h3 class="text-xl font-semibold text-center mb-2">Security Lead</h3>
+<p class="text-gray-400 text-center text-sm">Blockchain security expert. Audited 50+ smart contracts for leading protocols.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="faq" class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-4xl font-bold mb-16 text-center gradient-text">FAQ</h2>
+<div class="space-y-4 max-w-3xl mx-auto">
+<div class="faq-item border border-white/10 rounded-lg overflow-hidden">
+<button class="w-full p-6 text-left bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all flex items-center justify-between">
+<span class="text-lg font-medium">What is EM-X?</span>
+<i class="ri-add-line text-xl transform transition-transform"></i>
+</button>
+<div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+<div class="p-6 pt-0 text-gray-300">
+EM-X is a next-generation cryptocurrency built on the BNB Chain, designed to revolutionize decentralized finance. Our platform combines innovative tokenomics with advanced blockchain technology to create a sustainable and community-driven ecosystem.
+</div>
+</div>
+</div>
+<div class="faq-item border border-white/10 rounded-lg overflow-hidden">
+<button class="w-full p-6 text-left bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all flex items-center justify-between">
+<span class="text-lg font-medium">How to buy EM-X?</span>
+<i class="ri-add-line text-xl transform transition-transform"></i>
+</button>
+<div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+<div class="p-6 pt-0 text-gray-300">
+To buy EM-X, you'll need to:
+<ol class="list-decimal ml-4 mt-2 space-y-2">
+<li>Create a wallet (MetaMask or Trust Wallet)</li>
+<li>Add BNB Smart Chain network to your wallet</li>
+<li>Purchase BNB and transfer it to your wallet</li>
+<li>Connect your wallet to PancakeSwap</li>
+<li>Swap BNB for EM-X tokens</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="faq-item border border-white/10 rounded-lg overflow-hidden">
+<button class="w-full p-6 text-left bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all flex items-center justify-between">
+<span class="text-lg font-medium">Is there any airdrop?</span>
+<i class="ri-add-line text-xl transform transition-transform"></i>
+</button>
+<div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+<div class="p-6 pt-0 text-gray-300">
+Currently, we have no ongoing airdrops. To stay updated about potential future airdrops and token distributions, join our official Telegram channel and follow us on Twitter. Beware of scams - we will only announce airdrops through our official channels.
+</div>
+</div>
+</div>
+<div class="faq-item border border-white/10 rounded-lg overflow-hidden">
+<button class="w-full p-6 text-left bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all flex items-center justify-between">
+<span class="text-lg font-medium">What is token distribution?</span>
+<i class="ri-add-line text-xl transform transition-transform"></i>
+</button>
+<div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+<div class="p-6 pt-0 text-gray-300">
+EM-X token distribution is designed for maximum community benefit:
+<ul class="list-disc ml-4 mt-2 space-y-2">
+<li>95% - Community Pool (Public Sale, Liquidity, Development)</li>
+<li>5% - Founder Team (24-month lock period)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="faq-item border border-white/10 rounded-lg overflow-hidden">
+<button class="w-full p-6 text-left bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all flex items-center justify-between">
+<span class="text-lg font-medium">Who is behind EM-X?</span>
+<i class="ri-add-line text-xl transform transition-transform"></i>
+</button>
+<div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+<div class="p-6 pt-0 text-gray-300">
+EM-X is developed by a team of blockchain experts and DeFi enthusiasts with extensive experience in cryptocurrency development and financial technology. While our core team maintains some anonymity for security reasons, we are fully committed to the project's long-term success and community growth.
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="py-12 border-t border-white/10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<span class="text-2xl font-bold gradient-text">EM-X</span>
+<div class="flex items-center gap-4">
+<span class="text-sm text-gray-400">Powered by</span>
+<i class="ri-binance-fill text-2xl text-[#F0B90B]"></i>
+<span class="text-sm text-gray-400">BNB Chain</span>
+</div>
+<div class="text-sm text-gray-400">&copy; 2025 EM-X. All rights reserved.</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const contactForm = document.getElementById('contactForm');
+if(contactForm) {
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const formData = new FormData(contactForm);
+const submitButton = contactForm.querySelector('button[type="submit"]');
+const originalText = submitButton.innerHTML;
+submitButton.disabled = true;
+submitButton.innerHTML = '<i class="ri-loader-4-line animate-spin"></i> Sending...';
+setTimeout(() => {
+submitButton.innerHTML = '<i class="ri-check-line"></i> Message Sent!';
+submitButton.classList.remove('bg-primary');
+submitButton.classList.add('bg-green-500');
+contactForm.reset();
+setTimeout(() => {
+submitButton.disabled = false;
+submitButton.innerHTML = originalText;
+submitButton.classList.remove('bg-green-500');
+submitButton.classList.add('bg-primary');
+}, 2000);
+}, 1500);
+});
+}
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+const button = item.querySelector('button');
+const content = item.querySelector('.faq-content');
+const icon = item.querySelector('i');
+button.addEventListener('click', () => {
+const isOpen = content.classList.contains('active');
+const height = content.scrollHeight;
+faqItems.forEach(otherItem => {
+if(otherItem !== item) {
+otherItem.querySelector('.faq-content').classList.remove('active');
+otherItem.querySelector('.faq-content').style.maxHeight = '0';
+otherItem.querySelector('i').style.transform = 'rotate(0deg)';
+}
+});
+if(isOpen) {
+content.classList.remove('active');
+content.style.maxHeight = '0';
+icon.style.transform = 'rotate(0deg)';
+} else {
+content.classList.add('active');
+content.style.maxHeight = height + 'px';
+icon.style.transform = 'rotate(45deg)';
+}
+});
+});
+const modal = document.getElementById('buyModal');
+const closeModal = document.getElementById('closeModal');
+const walletConnect = document.getElementById('walletConnect');
+const swapInterface = document.getElementById('swapInterface');
+const buyButtons = document.querySelectorAll('.glow-button');
+let walletConnected = false;
+buyButtons.forEach(button => {
+if(button.textContent.includes('Buy EM-X Now')) {
+button.addEventListener('click', () => {
+modal.classList.remove('hidden');
+if(walletConnected) {
+walletConnect.classList.add('hidden');
+swapInterface.classList.remove('hidden');
+} else {
+walletConnect.classList.remove('hidden');
+swapInterface.classList.add('hidden');
+}
+});
+}
+});
+closeModal.addEventListener('click', () => {
+modal.classList.add('hidden');
+});
+modal.addEventListener('click', (e) => {
+if(e.target === modal) {
+modal.classList.add('hidden');
+}
+});
+document.querySelectorAll('#walletConnect button').forEach(button => {
+button.addEventListener('click', () => {
+walletConnected = true;
+walletConnect.classList.add('hidden');
+swapInterface.classList.remove('hidden');
+});
+});
+const chartDom = document.getElementById('tokenomicsChart');
+const myChart = echarts.init(chartDom);
+const option = {
+animation: false,
+tooltip: {
+trigger: 'item',
+backgroundColor: 'rgba(255, 255, 255, 0.9)',
+textStyle: {
+color: '#1f2937'
+}
+},
+series: [{
+type: 'pie',
+radius: ['40%', '70%'],
+itemStyle: {
+borderRadius: 10,
+borderColor: '#0B0E17',
+borderWidth: 2
+},
+label: {
+show: false
+},
+emphasis: {
+label: {
+show: false
+}
+},
+data: [
+{ value: 95, name: 'Topluluk', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+{ value: 5, name: 'Kurucu Takımı', itemStyle: { color: 'rgba(141, 211, 199, 1)' } }
+]
+}]
+};
+myChart.setOption(option);
+window.addEventListener('resize', function() {
+myChart.resize();
+});
+});
+</script>
+</body>
+</html>
